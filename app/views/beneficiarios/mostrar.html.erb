@@ -1,3 +1,32 @@
-<h1>Beneficiarios#mostrar</h1>
-<p>Find me in app/views/beneficiarios/mostrar.html.erb</p>
-<%= @beneficiario.nombre %>
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>beneficiarios</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "beneficiarios", beneficiarios_path %></li>
+        <li class="active">Mostrar</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre</strong>
+    <%= @beneficiario.nombre.to_s %>
+  </p>
+  <p>
+    <strong> Abreviación Categoria</strong>
+    <%= @beneficiario.apellido.to_s %>
+  </p>
+
+  <p>
+    <strong> Descripcion De La Categoria</strong>
+    <%= @beneficiario.rut.to_s %>
+  </p>
+
+
+  <%= link_to 'Editar', editar_beneficiario_url,:class =>"btn btn-success" %>
+  <%= link_to 'Atras', beneficiarios_url,:class =>"btn btn-info" %>
+</section>

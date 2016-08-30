@@ -1,2 +1,13 @@
-<h1>Beneficiarios#nuevo</h1>
-<p>Find me in app/views/beneficiarios/nuevo.html.erb</p>
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Nuevo <small>Beneficiarios</small></h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "Beneficiarios", beneficiarios_path %></li>
+       <li class="active">Nuevo</li>
+      </ol>
+    </section>
+<% end %>
+
+<%= render 'form' %>

@@ -2,7 +2,7 @@ class BeneficiariosController < ApplicationController
   before_action :set_beneficiario, only: [:mostrar, :editar, :update, :eliminar]
 
   def index
-    @beneficiarios = Beneficiario.all
+    @beneficiarios = Beneficiario.paginate(:page => params[:page], :per_page => 20).order('id ASC')
   end
 
   def nuevo
@@ -13,10 +13,10 @@ class BeneficiariosController < ApplicationController
   end
 
   def crear
-    @beneficiario = beneficiario.new(beneficiario_params)
+    @beneficiario = Beneficiario.new(beneficiario_params)
     respond_to do |format|
       if @beneficiario.save
-       format.html{redirect_to categoria_url(@beneficiario), notice:  'beneficiario Guardado Con Exito'}
+       format.html{redirect_to beneficiario_url(@beneficiario), notice:  'beneficiario Guardado Con Exito'}
       else
         format.html{render :nuevo}
       end

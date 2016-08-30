@@ -1,0 +1,39 @@
+<section class="content invoice">
+  <div class="row">
+    <div class="col-md-10">
+      <%= form_for(@beneficiario, :html => { :role => "form" }) do |f| %>
+        <% if @beneficiario.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <h4><%= pluralize(@beneficiario.errors.count, "errores") %> prohibido guardar este beneficiario:</h4>
+
+            <ul>
+            <% @beneficiario.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="form-group">
+        <%= f.label :nombre,"Nombre", :class =>"col-md-2" %>
+        <div class="col-md-10"  style="margin-bottom: 10px;">
+        <%= f.text_field :nombre, placeholder: "Ingrese Nombre De la beneficiario" , :class =>"col-md-8" %>
+     </div> 
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="form-group">
+        <%= f.label :fecha_nacimiento,"fecha Nacimiento", :class =>"col-md-2" %>
+        <div class="col-md-10"  style="margin-bottom: 10px;">
+        <%= f.date_field :fecha_nacimiento, :class =>"col-md-8" %>
+     </div> 
+
+      <div class="form-group botones2">
+        <%= f.submit :class => "btn btn-primary" %>
+      </div>
+     
+    <% end %>
+    </div>
+  </div>
+</section>
