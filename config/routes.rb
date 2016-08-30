@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  get 'beneficiarios/', to: 'beneficiarios#index', as: 'beneficiarios'
+  get 'beneficiarios/nuevo', as: 'nuevo_beneficiario'
+  post 'beneficiarios/', to: 'beneficiarios#crear'
+  get 'beneficiarios/:id/editar', to: 'beneficiarios#editar', as: 'editar_beneficiario'
+  get 'beneficiarios/:id', to: 'beneficiarios#mostrar', as: 'beneficiario'
+  put 'beneficiarios/:id',to: 'beneficiarios#update'
+  patch 'beneficiarios/:id' ,to: 'beneficiarios#update'
+  delete 'beneficiarios/:id', to: 'beneficiarios#eliminar'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
