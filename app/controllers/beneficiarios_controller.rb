@@ -1,5 +1,6 @@
 class BeneficiariosController < ApplicationController
   before_action :set_beneficiario, only: [:mostrar, :editar, :update, :eliminar]
+  before_action :authenticate_usuario!
 
   def index
     @beneficiarios = Beneficiario.paginate(:page => params[:page], :per_page => 20).order('id ASC')

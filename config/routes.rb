@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  devise_for :usuarios
   get 'beneficiarios/', to: 'beneficiarios#index', as: 'beneficiarios'
   get 'beneficiarios/nuevo', as: 'nuevo_beneficiario'
   post 'beneficiarios/', to: 'beneficiarios#crear'
