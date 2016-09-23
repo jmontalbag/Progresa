@@ -22,9 +22,15 @@
   </p>
 
   <p>
-    <strong> Descripcion De La Categoria</strong>
+    <strong> Rut</strong>
     <%= @beneficiario.rut.to_s %>
   </p>
+
+   <p>
+    <strong> Fecha Nacimiento</strong>
+    <%= @beneficiario.fecha_nacimiento.to_s %>
+  </p>
+
 
 
   <%= link_to 'Editar', editar_beneficiario_url,:class =>"btn btn-success" %>

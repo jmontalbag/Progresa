@@ -5,7 +5,6 @@ class CreateObjetivos < ActiveRecord::Migration
       t.string :nombre
       t.integer :clasificacion_id
       t.integer :area_id
-
       t.timestamps null: false
     end
   end
