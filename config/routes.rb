@@ -1,5 +1,19 @@
 Rails.application.routes.draw do
 
+  get 'usuarios/index'
+
+  get 'roles/index'
+
+  get 'objetivos/index'
+
+  get 'historials/index'
+
+  get 'estados/index'
+
+  get 'clasificaciones/index'
+
+  get 'areas/index'
+
   devise_for :usuarios
   get 'beneficiarios/', to: 'beneficiarios#index', as: 'beneficiarios'
   get 'beneficiarios/nuevo', as: 'nuevo_beneficiario'

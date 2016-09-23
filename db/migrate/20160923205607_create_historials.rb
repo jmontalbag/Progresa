@@ -5,6 +5,8 @@ class CreateHistorials < ActiveRecord::Migration
       t.integer :beneficiario_id
       t.integer :estado_id
       t.integer :objetivos_id
+      t.date :fecha
+      t.time :hora 
 
       t.timestamps null: false
     end
