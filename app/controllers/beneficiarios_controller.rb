@@ -1,11 +1,12 @@
 class BeneficiariosController < ApplicationController
   before_action :set_beneficiario, only: [:mostrar, :editar, :update, :eliminar]
-  before_action :authenticate_usuario!, only:[:update]
-
+  before_action :authenticate_usuario!, only:[:update,:mostrar,:index,:crear,:eliminar,:editar,:nuevo]
+  layout "login" , :only => :indexfront
   def index
     @beneficiarios = Beneficiario.paginate(:page => params[:page], :per_page => 10).order('id ASC')
   end
-
+def indexfront
+end
   def nuevo
     @beneficiario = Beneficiario.new
   end
@@ -49,6 +50,7 @@ class BeneficiariosController < ApplicationController
 
   def set_beneficiario
     @beneficiario = Beneficiario.find(params[:id])
+    
   end
 
   def beneficiario_params

@@ -19,14 +19,21 @@
       <div class="form-group">
         <%= f.label :nombre,"Nombre", :class =>"col-md-2" %>
         <div class="col-md-10"  style="margin-bottom: 10px;">
-        <%= f.text_field :nombre, placeholder: "Ingrese Nombre De la beneficiario" , :class =>"col-md-8" %>
+        <%= f.text_field :nombre, placeholder: "Ingrese Nombre del beneficiario" , :class =>"col-md-8" %>
      </div> 
+
+    <div class="row" style="margin-top: 30px;">
+      <div class="form-group">
+        <%= f.label :apellido,"Apellido", :class =>"col-md-2" %>
+        <div class="col-md-10"  style="margin-bottom: 10px;">
+        <%= f.text_field :nombre, placeholder: "Ingrese Apellido del beneficiario" , :class =>"col-md-8" %>
+     </div>
 
     <div class="row" style="margin-top: 30px;">
       <div class="form-group">
         <%= f.label :fecha_nacimiento,"fecha Nacimiento", :class =>"col-md-2" %>
         <div class="col-md-10"  style="margin-bottom: 10px;">
-        <%= f.date_field :fecha_nacimiento, :class =>"col-md-8" %>
+        <%= f.date_field :fecha_nacimiento, placeholder: "Ingrese Fecha Nacimiento del beneficiario" , :class =>"col-md-8" %>
      </div> 
 
       <div class="form-group botones2">
