@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
 
   devise_for :usuarios
+  get 'beneficio/', to:'beneficiarios#indexfront'
+
   get 'beneficiarios/', to: 'beneficiarios#index', as: 'beneficiarios'
   get 'beneficiarios/nuevo', as: 'nuevo_beneficiario'
   post 'beneficiarios/', to: 'beneficiarios#crear'
@@ -14,7 +16,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'beneficiarios#index'
+   root 'beneficiarios#indexfront'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
