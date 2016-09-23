@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  usuario_id: 1
+  beneficiario_id: 1
+  estado_id: 1
+  objetivos_id: 1
+
+two:
+  usuario_id: 1
+  beneficiario_id: 1
+  estado_id: 1
+  objetivos_id: 1
