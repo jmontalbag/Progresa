@@ -1,6 +1,8 @@
 <section class="content invoice">
   <div class="row">
-    <div class="col-md-10">
+  <h2>Crear Beneficiario</h2>
+  <h2> </h2>
+    <div class="col-md-12">
       <%= form_for(@beneficiario, :html => { :role => "form" }) do |f| %>
         <% if @beneficiario.errors.any? %>
           <div class="alert alert-danger alert-dismissable" role="alert">
@@ -15,30 +17,60 @@
           </div>
         <% end %>
 
-    <div class="row" style="margin-top: 30px;">
-      <div class="form-group">
-        <%= f.label :nombre,"Nombre", :class =>"col-md-2" %>
-        <div class="col-md-10"  style="margin-bottom: 10px;">
-        <%= f.text_field :nombre, placeholder: "Ingrese Nombre del beneficiario" , :class =>"col-md-8" %>
-     </div> 
 
-    <div class="row" style="margin-top: 30px;">
-      <div class="form-group">
-        <%= f.label :apellido,"Apellido", :class =>"col-md-2" %>
-        <div class="col-md-10"  style="margin-bottom: 10px;">
-        <%= f.text_field :nombre, placeholder: "Ingrese Apellido del beneficiario" , :class =>"col-md-8" %>
-     </div>
 
-    <div class="row" style="margin-top: 30px;">
-      <div class="form-group">
-        <%= f.label :fecha_nacimiento,"fecha Nacimiento", :class =>"col-md-2" %>
-        <div class="col-md-10"  style="margin-bottom: 10px;">
-        <%= f.date_field :fecha_nacimiento, placeholder: "Ingrese Fecha Nacimiento del beneficiario" , :class =>"col-md-8" %>
-     </div> 
-
-      <div class="form-group botones2">
-        <%= f.submit :class => "btn btn-primary" %>
+  <div class="row">
+      <div class="form-group" style="margin-top: 15px;">
+        <%= f.label :nombre,"Nombre", :class =>"col-md-1" %>
       </div>
+      <div class="form_group"  style="margin-bottom: 10px;">
+        <%= f.text_field :nombre, placeholder: "Ingrese Nombre" , :class =>"col-md-4" %>
+      </div>
+  </div>
+
+  <div class="row">    
+      <div class="form-group" style="margin-top: 15px;">
+        <%= f.label :apellido,"Apellido", :class =>"col-md-1" %>
+      </div>
+      <div class="form_group"  style="margin-bottom: 10px;">
+        <%= f.text_field :apellido, placeholder: "Ingrese Apellido" , :class =>"col-md-4" %>
+      </div>
+  </div>
+
+  <div class="row">    
+      <div class="form-group" style="margin-top: 15px;">
+        <%= f.label :rut,"Rut", :class =>"col-md-1" %>
+      </div>
+      <div class="form_group"  style="margin-bottom: 10px;">
+        <%= f.text_field :rut, placeholder: "Ingrese Rut sin guion ni digito" , :class =>"col-md-4" %>
+      </div>
+  </div>
+
+  <div class="row">    
+      <div class="form-group" style="margin-top: 15px;">
+        <%= f.label :fecha_nacimiento,"Fecha Nacimiento", :class =>"col-md-1" %>
+      </div>
+      <div class="form_group"  style="margin-bottom: 10px;">
+        <%= f.date_field :fecha_nacimiento, placeholder: "Ingrese Fecha de Nacimiento" , :class =>"col-md-4" %>
+      </div>
+  </div>
+
+  <div class="row">    
+      <div class="form-group" style="margin-top: 15px;">
+        <%= f.label :edad,"Edad", :class =>"col-md-1" %>
+      </div>
+      <div class="form_group"  style="margin-bottom: 10px;">
+        <%= f.text_field :edad, placeholder: "Ingrese edad" , :class =>"col-md-4" %>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="form-group" style="margin-top: 15px;">
+        <div class="form-group botones2">
+          <%= f.submit :class => "btn btn-primary" %>
+        </div>
+      </div>
+  </div>
      
     <% end %>
     </div>
