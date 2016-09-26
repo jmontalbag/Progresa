@@ -2,14 +2,14 @@
   <div class="row">
   <h2> </h2>
     <div class="col-md-12">
-      <%= form_for(@beneficiario, :html => { :role => "form" }) do |f| %>
-        <% if @beneficiario.errors.any? %>
+      <%= form_for(@usuario, :html => { :role => "form" }) do |f| %>
+        <% if @usuario.errors.any? %>
           <div class="alert alert-danger alert-dismissable" role="alert">
             <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
-            <h4><%= pluralize(@beneficiario.errors.count, "errores") %> prohibido guardar este beneficiario:</h4>
+            <h4><%= pluralize(@usuario.errors.count, "errores") %> prohibido guardar este usuario:</h4>
 
             <ul>
-            <% @beneficiario.errors.full_messages.each do |msg| %>
+            <% @usuario.errors.full_messages.each do |msg| %>
               <li><%= msg %></li>
             <% end %>
             </ul>
@@ -29,37 +29,28 @@
 
   <div class="row">    
       <div class="form-group" style="margin-top: 15px;">
-        <%= f.label :apellido,"Apellido", :class =>"col-md-1" %>
+        <%= f.label :email,"Email", :class =>"col-md-1" %>
       </div>
       <div class="form_group"  style="margin-bottom: 10px;">
-        <%= f.text_field :apellido, placeholder: "Ingrese Apellido" , :class =>"col-md-4" %>
+        <%= f.email_field :email, placeholder: "Ingrese Email" , :class =>"col-md-4" %>
       </div>
   </div>
 
   <div class="row">    
       <div class="form-group" style="margin-top: 15px;">
-        <%= f.label :rut,"Rut", :class =>"col-md-1" %>
+        <%= f.label :encrypted_password,"Password", :class =>"col-md-1" %>
       </div>
       <div class="form_group"  style="margin-bottom: 10px;">
-        <%= f.text_field :rut, placeholder: "Ingrese Rut sin guion ni digito" , :class =>"col-md-4" %>
+        <%= f.text_field :encrypted_password, placeholder: "Ingrese Password para Usuario" , :class =>"col-md-4" %>
       </div>
   </div>
 
   <div class="row">    
       <div class="form-group" style="margin-top: 15px;">
-        <%= f.label :fecha_nacimiento,"Fecha Nacimiento", :class =>"col-md-1" %>
+        <%= f.label :rol_id,"Rol", :class =>"col-md-1" %>
       </div>
       <div class="form_group"  style="margin-bottom: 10px;">
-        <%= f.date_field :fecha_nacimiento, placeholder: "Ingrese Fecha de Nacimiento" , :class =>"col-md-4" %>
-      </div>
-  </div>
-
-  <div class="row">    
-      <div class="form-group" style="margin-top: 15px;">
-        <%= f.label :edad,"Edad", :class =>"col-md-1" %>
-      </div>
-      <div class="form_group"  style="margin-bottom: 10px;">
-        <%= f.text_field :edad, placeholder: "Ingrese edad" , :class =>"col-md-4" %>
+        <%= f.text_field :rol_id, placeholder: "Ingrese Rol" , :class =>"col-md-4" %>
       </div>
   </div>
 

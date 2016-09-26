@@ -1,10 +1,16 @@
 Rails.application.routes.draw do
 
-  get 'usuarios/index'
+  get 'usuarios/', to:'usuarios#index'
+  get 'usuarios/nuevo', as: 'nuevo_usuario'
+  post 'usuarios/', to: 'usuarios#crear'
+  delete 'usuarios/:id', to: 'usuarios#eliminar'
+  get 'usuarios/:id/editar', to: 'usuarios#editar', as: 'editar_usuario'
+  put 'usuarios/:id',to: 'usuarios#update'
+  patch 'usuarios/:id' ,to: 'usuarios#update'
 
   get 'roles/index'
 
-  get 'objetivos/index'
+  get 'objetivos/', to: 'objetivos#index'
 
   get 'historials/index'
 

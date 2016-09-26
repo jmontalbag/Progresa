@@ -1,9 +1,34 @@
 <% content_for :content_header  do %>
   <section class="content-header">
-    <h1>Usuarios <small>#index</small></h1>
+    <h1>Usuarios</h1>
+    <!--span class="btn btn-default btn-lg bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear Usuario',nuevo_usuario_path %></span-->
   </section>
 <% end %>
 
+
+
 <section class="content invoice">
-  <p>Find me in app/views/usuarios/index.html.erb</p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Email</th>
+      <th>Rol</th>
+      <th>Editar</th>
+      <th>Eliminar</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @usuarios.each do |usuario|%>
+        <tr>
+          <td><%= usuario.nombre.to_s%> </td>
+          <td><%= usuario.email.to_s%> </td>
+          <td><%= usuario.rol_id.to_s%> </td>
+          <!--td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><%= link_to 'Editar',editar_usuario_path(usuario) %></td-->
+          <!--td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><%= link_to'Eliminar',{ action: :eliminar, id: usuario.id} , method: :delete, data: {confirm: 'Estas seguro?'} %> </td-->
+        </tr>
+    <%end%>
+    </tbody>
+  </table>
+  <%= will_paginate @usuarios, renderer: BootstrapPagination::Rails %>
 </section>

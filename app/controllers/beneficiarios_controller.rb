@@ -18,7 +18,7 @@ end
     @beneficiario = Beneficiario.new(beneficiario_params)
     respond_to do |format|
       if @beneficiario.save
-       format.html{redirect_to beneficiario_url(@beneficiario), notice:  'beneficiario Guardado Con Exito'}
+       format.html{redirect_to beneficiario_url(@beneficiario), notice:  'Beneficiario guardado con exito!'}
       else
         format.html{render :nuevo}
       end
@@ -29,7 +29,7 @@ end
   def eliminar
     @beneficiario.destroy
     respond_to do |format|
-      format.html { redirect_to beneficiarios_url, notice: 'beneficiario eliminado con Exito.' }
+      format.html { redirect_to beneficiarios_url, notice: 'Beneficiario eliminado con exito!' }
     end
   end
 
@@ -39,7 +39,7 @@ end
   def update
     respond_to do |format|
       if @beneficiario.update(beneficiario_params)
-        format.html{redirect_to @beneficiario, notice: 'beneficiario Editado con Exito'}
+        format.html{redirect_to @beneficiario, notice: 'Beneficiario editado con exito!'}
       else
         format.html{render :edit}
       end
