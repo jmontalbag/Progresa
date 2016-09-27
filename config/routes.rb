@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'areas/', to: 'areas#index'
+
+
   get 'usuarios/', to:'usuarios#index'
   get 'usuarios/nuevo', as: 'nuevo_usuario'
   get 'usuarios/:id/editar', to: 'usuarios#editar', as: 'editar_usuario'

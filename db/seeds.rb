@@ -9,3 +9,11 @@
 Estado.create!(nombre: "no seleccionado")
 Estado.create!(nombre: "seleccionado")
 Estado.create!(nombre: "completado")
+
+
+Area.create!(nombre: "Corporal",cantidad: 17)
+Area.create!(nombre: "Afectiva",cantidad: 17)
+Area.create!(nombre: "Social",cantidad: 17)
+Area.create!(nombre: "Espiritual",cantidad: 17)
+Area.create!(nombre: "Creativa",cantidad: 17)
+Area.create!(nombre: "Caracter",cantidad: 17)
