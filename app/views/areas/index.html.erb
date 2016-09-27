@@ -1,9 +1,25 @@
 <% content_for :content_header  do %>
-  <section class="content-header">
-    <h1>Areas <small>#index</small></h1>
-  </section>
+    <section class="content-header">
+      <h1>Area</h1>
+    </section>
 <% end %>
 
 <section class="content invoice">
-  <p>Find me in app/views/areas/index.html.erb</p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Cantidad</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @areas.each do |area|%>
+        <tr>
+          <td><%= area.nombre.to_s%> </td>
+          <td><%= area.cantidad.to_s%> </td>
+        </tr>
+    <%end%>
+    </tbody>
+  </table>
+  <%= will_paginate @areas, renderer: BootstrapPagination::Rails %>
 </section>

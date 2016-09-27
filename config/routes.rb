@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  get 'areas/', to: 'areas#index'
+
+
   get 'usuarios/', to:'usuarios#index'
   get 'usuarios/nuevo', as: 'nuevo_usuario'
   post 'usuarios/', to: 'usuarios#crear'
