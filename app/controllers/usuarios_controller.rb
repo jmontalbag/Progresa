@@ -20,10 +20,6 @@ class UsuariosController < ApplicationController
   end
 
   def eliminar
-    @usuario.destroy
-    respond_to do |format|
-      format.html { redirect_to usuarios_url, notice: 'Usuario eliminado con exito!' }
-    end
   end
 
   def update
