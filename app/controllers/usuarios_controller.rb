@@ -19,6 +19,9 @@ class UsuariosController < ApplicationController
     end
   end
 
+  def editar
+  end
+
   def eliminar
   end
 
@@ -31,6 +34,8 @@ class UsuariosController < ApplicationController
       end
     end
   end
+
+  private
 
   def set_usuario
     @usuario = Usuario.find(params[:id])
