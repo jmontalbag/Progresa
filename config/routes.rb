@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+
+  get 'historials/', to: 'historials#index'
+
+
   get 'areas/', to: 'areas#index'
 
 

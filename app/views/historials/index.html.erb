@@ -1,9 +1,30 @@
 <% content_for :content_header  do %>
-  <section class="content-header">
-    <h1>Historials <small>#index</small></h1>
-  </section>
+    <section class="content-header">
+      <h1>Historial</h1>
+    </section>
 <% end %>
 
 <section class="content invoice">
-  <p>Find me in app/views/historials/index.html.erb</p>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Usuario</th>
+      <th>Beneficiario</th>
+      <th>Objetivos</th>
+      <th>Estado</th>
+      <th>Evaluado</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @historials.each do |historial|%>
+        <tr>
+          <td><%= historials.usuario_id.to_s%> </td>
+          <td><%= historials.beneficiario_id.to_s%> </td>
+          <td><%= historials.estado_id.to_s%> </td>
+          <td><%= historials.objetivos_id.to_s%> </td>
+        </tr>
+    <%end%>
+    </tbody>
+  </table>
+  <%= will_paginate @areas, renderer: BootstrapPagination::Rails %>
 </section>
