@@ -9,8 +9,6 @@ Rails.application.routes.draw do
 
   get 'usuarios/', to:'usuarios#index'
   get 'usuarios/nuevo', as: 'nuevo_usuario'
-  post 'usuarios/', to: 'usuarios#crear'
-  delete 'usuarios/:id', to: 'usuarios#eliminar'
   get 'usuarios/:id/editar', to: 'usuarios#editar', as: 'editar_usuario'
   put 'usuarios/:id',to: 'usuarios#update'
   patch 'usuarios/:id' ,to: 'usuarios#update'
