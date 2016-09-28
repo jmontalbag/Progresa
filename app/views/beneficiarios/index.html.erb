@@ -1,7 +1,9 @@
 <% content_for :content_header  do %>
     <section class="content-header">
       <h1>Beneficiarios</h1>
-      <span class="btn btn-success btn-lg bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear beneficiario',nuevo_beneficiario_path %></span>
+      <div class="row">
+      <span class="btn btn-default btn bt pull-right glyphicon glyphicon-plus"><%= link_to 'Crear Beneficiario',nuevo_beneficiario_path %></span>
+      </div>
 
     </section>
 <% end %>
@@ -12,9 +14,6 @@
     <tr>
       <th>Nombre</th>
       <th>Apellido</th>
-      <th>RUT</th>
-      <th>Fecha nacimiento</th>
-      <th>Edad</th>
       <th>Mostrar</th>
       <th>Editar</th>
       <th>Eliminar</th>
@@ -25,9 +24,6 @@
         <tr>
           <td><%= beneficiario.nombre.to_s%> </td>
           <td><%= beneficiario.apellido.to_s%> </td>
-          <td><%= beneficiario.rut.to_s%> </td>
-          <td><%= beneficiario.fecha_nacimiento.to_s%> </td>
-		  <td><%= beneficiario.edad.to_s%> </td>
           <td><span class="glyphicon glyphicon-play" aria-hidden="true" ></span><%= link_to 'Mostrar', beneficiario_path(beneficiario) %> </td>
           <td><span class="glyphicon glyphicon-pencil" aria-hidden="true"></span><%= link_to 'Editar',editar_beneficiario_path(beneficiario) %></td>
           <td><span class="glyphicon glyphicon-trash" aria-hidden="true"></span><%= link_to'Eliminar',{ action: :eliminar, id: beneficiario.id} , method: :delete, data: {confirm: 'Estas seguro?'} %> </td>
