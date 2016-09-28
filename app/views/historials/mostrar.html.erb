@@ -1,0 +1,42 @@
+<% content_for :content_header  do %>
+    <section class="content-header">
+      <h1>Historial</h1>
+
+      <ol class="breadcrumb">
+        <li><a href="/"><i class="fa fa-dashboard"></i> Home</a></li>
+        <li><%= link_to "beneficiarios", historials_path %></li>
+        <li class="active">Detalles Beneficiario</li>
+      </ol>
+    </section>
+<% end %>
+
+<section class="content invoice botones">
+
+  <p>
+    <strong>Nombre: </strong>
+    <%= @beneficiario.nombre.to_s %>
+  </p>
+
+  <p>
+    <strong>Apellido: </strong>
+    <%= @beneficiario.apellido.to_s %>
+  </p>
+
+  <p>
+    <strong>Rut: </strong>
+    <%= @beneficiario.rut.to_s %>
+  </p>
+
+  <p>
+    <strong>Fecha Nacimiento: </strong>
+    <%= @beneficiario.fecha_nacimiento.to_s %>
+  </p>
+
+  <p>
+    <strong>Edad: </strong>
+    <%= @beneficiario.edad.to_s %>
+  </p>
+
+    <%= link_to 'Editar', editar_beneficiario_url,:class =>"btn btn-success" %>
+  <%= link_to 'Atras', beneficiarios_url,:class =>"btn btn-info" %>
+</section>

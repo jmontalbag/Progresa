@@ -1,8 +1,18 @@
-<section class="content invoice botones">
+<section class="content invoice">
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Nombre</th>
+    </tr>
+    </thead>
+    <tbody>
+    <% @beneficiarios.each do |beneficiario|%>
+        <tr>
+          <td><%= beneficiario.nombre.to_s%> </td>
+        
+        </tr>
+    <%end%>
+    </tbody>
+  </table>
 
-  <p>
-    <strong>Nombre: </strong>
-    <%= @beneficiario.nombre.to_s %>
-  </p>
-
- </section>
+</section>

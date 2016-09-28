@@ -18,6 +18,7 @@ Rails.application.routes.draw do
   get 'objetivos/', to: 'objetivos#index'
 
   get 'historials/index'
+  get 'historials/:id/editar', to: 'historials#editar', as: 'editar_historial'
 
   get 'estados/index'
 
@@ -27,7 +28,7 @@ Rails.application.routes.draw do
 
   devise_for :usuarios
   get 'beneficio/', to:'beneficiarios#indexfront'
-
+  
   get 'beneficiarios/', to: 'beneficiarios#index', as: 'beneficiarios'
   get 'beneficiarios/nuevo', as: 'nuevo_beneficiario'
   post 'beneficiarios/', to: 'beneficiarios#crear'
@@ -41,7 +42,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-   root 'beneficiarios#indexfront'
+   root 'usuarios#index'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
