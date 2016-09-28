@@ -89,10 +89,6 @@ ActiveRecord::Schema.define(version: 20160928031046) do
   add_index "usuarios", ["email"], name: "index_usuarios_on_email", unique: true, using: :btree
   add_index "usuarios", ["reset_password_token"], name: "index_usuarios_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "historials", "beneficiarios"
-  add_foreign_key "historials", "estados"
-  add_foreign_key "historials", "objetivos", column: "objetivos_id"
-  add_foreign_key "historials", "usuarios"
   add_foreign_key "objetivos", "areas"
   add_foreign_key "objetivos", "clasificaciones", column: "clasificacion_id"
   add_foreign_key "usuarios", "roles", column: "rol_id"
