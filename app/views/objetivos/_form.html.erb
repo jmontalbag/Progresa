@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Objetivos</title>
+</head>
+<body>
+  <section class="content invoice">
+    <div class="row">
+    <h2> </h2>
+    <div class="col-md-12">
+      <%= form_for(@objetivo, :html => { :role => "form" }) do |f| %>
+          <% if @objetivo.errors.any? %>
+          <div class="alert alert-danger alert-dismissable" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>
+            <h4><%= pluralize(@objetivo.errors.count, "errores") %> prohibido guardar este objetivo:</h4>
+
+            <ul>
+            <% @objetivo.errors.full_messages.each do |msg| %>
+              <li><%= msg %></li>
+            <% end %>
+            </ul>
+          </div>
+        <% end %>
+
+        <div class="row">
+          <div class="form-group" style="margin-top: 15px;">
+              <%= f.label :texto,"Texto", :class =>"col-md-1" %>
+          </div>
+          <div class="form_group"  style="margin-bottom: 10px;">
+              <%= f.text_field :texto, placeholder: "Ingrese Texto" , :class =>"col-md-4", :required => true %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group" style="margin-top: 15px;">
+              <%= f.label :nombre,"Nombre", :class =>"col-md-1" %>
+          </div>
+          <div class="form_group"  style="margin-bottom: 10px;">
+              <%= f.text_field :nombre, placeholder: "Ingrese Nombre" , :class =>"col-md-4", :required => true %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group" style="margin-top: 15px;">
+              <%= f.label :clasificacion_id,"Clasificacion", :class =>"col-md-1" %>
+          </div>
+          <div class="form_group"  style="margin-bottom: 10px;">
+              <%= f.text_field :clasificacion_id, placeholder: "Ingrese Clasificacion" , :class =>"col-md-4"%>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group" style="margin-top: 15px;">
+              <%= f.label :area_id,"Area", :class =>"col-md-1" %>
+          </div>
+          <div class="form_group"  style="margin-bottom: 10px;">
+              <%= f.text_field :area_id, placeholder: "Ingrese Area" , :class =>"col-md-4"%>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="form-group" style="margin-top: 15px;">
+             <div class="form-group botones2">
+                 <%= f.submit :class => "btn btn-primary" %>
+             </div>
+          </div>
+        </div>
+
+       <% end %>
+       </div>
+       </div>
+       </section>
+       </body>
+       </html>

@@ -16,6 +16,12 @@ Rails.application.routes.draw do
   get 'roles/index'
 
   get 'objetivos/', to: 'objetivos#index'
+  get 'objetivos/nuevo', as: 'nuevo_objetivo'
+  post 'objetivos/', to: 'objetivos#crear'
+  get 'objetivos/:id/editar', to: 'objetivos#editar', as: 'editar_objetivo'
+  put 'objetivos/:id',to: 'objetivos#update'
+  patch 'objetivos/:id' ,to: 'objetivos#update'
+  delete 'objetivos/:id', to: 'objetivos#eliminar'
 
   get 'historials/index'
   get 'historials/:id/editar', to: 'historials#editar', as: 'editar_historial'
@@ -43,6 +49,7 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
    root 'usuarios#index'
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
