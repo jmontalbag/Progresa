@@ -1,5 +1,6 @@
 class UsuariosController < ApplicationController
-
+  before_action :set_beneficiario, only: [:mostrar, :editar, :update, :eliminar]
+  before_action :authenticate_usuario!, only:[:update,:mostrar,:index,:crear,:eliminar,:editar,:nuevo]
   def index
   	@usuarios = Usuario.paginate(:page => params[:page], :per_page => 10).order('id ASC')
   end
